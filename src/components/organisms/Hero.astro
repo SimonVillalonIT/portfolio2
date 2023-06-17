@@ -1,0 +1,33 @@
+---
+import { hero } from "../../data/Data";
+import { Icon } from "astro-icon";
+import "./Hero.css";
+---
+
+<section class="flex h-screen flex-col justify-center pt-16">
+    <div class="flex max-w-[45%] flex-col">
+        <h3 class="pb-4 text-2xl font-bold">{hero.gretting}</h3>
+        <div>
+            <h2 class="pb-2 text-5xl font-bold">{hero.name}</h2>
+            <h4 class="pb-8 text-3xl font-bold">
+                <span class="text-secondary">{hero.role}</span>
+            </h4>
+        </div>
+        <p class="pb-6">{hero.paragraph}</p>
+        <div class="flex pb-4">
+            {
+                hero.socialNetworks.map((social) => (
+                    <Icon
+                        {...social}
+                        class="mr-4 w-12 text-secondary duration-300 hover:-translate-y-2 hover:cursor-pointer"
+                    />
+                ))
+            }
+        </div>
+        <button
+            id="Button"
+            class="max-w-[200px] rounded-2xl bg-secondary py-2 font-semibold text-primary duration-100"
+            >{hero.button}</button
+        >
+    </div>
+</section>

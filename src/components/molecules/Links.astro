@@ -1,0 +1,8 @@
+---
+import { header } from "../../data/Data";
+import Link from "../atoms/Link.astro";
+---
+
+<div>
+    {header.links.map((link: any) => <Link {...link} />)}
+</div>
